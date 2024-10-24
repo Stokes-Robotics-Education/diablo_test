@@ -2,7 +2,6 @@
 import rclpy
 import time
 import math
-import random
 from rclpy.node import Node
 from motion_msgs.msg import MotionCtrl
 
@@ -76,31 +75,7 @@ def main(args=None):
     rclpy.init(args=args) 
     diablo_test = DiabloTest()
 
-    # control logic here
-
-    print('Watch me do squats')
-    for i in range(3):
-        diablo_test.stand(1.0)
-        time.sleep(2)
-
-        diablo_test.stand(0.2)
-        time.sleep(2)
-
-        print(f'{i+1} squat(s) done')
-
-   
-    test = 0    
-    num_tries = 0
-    while True:        
-        num_tries += 1
-        test = random.randint(0,4)
-        if test == 3:
-            print(f'This loop took {num_tries} tries to turn the robot.')
-            diablo_test.turn(math.pi/4)
-            time.sleep(8)     
-            diablo_test.turn(0.0) 
-            diablo_test.sit()      
-            break      
+    # code goes here
 
     time.sleep(1)
     rclpy.shutdown()
